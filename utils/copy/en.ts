@@ -1,8 +1,8 @@
 export const enCopy = {
   sections: {
     cover: {
-      title: "Heber Álvarez Project",
-      subtitle: "Frontend development portfolio",
+      title: "Heber Álvarez ",
+      subtitle: "Frontend portfolio",
       intro:
         "I design and build web interfaces focusing on detail, performance and a clean, modern user experience.",
     },

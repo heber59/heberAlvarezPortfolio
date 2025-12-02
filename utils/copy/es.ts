@@ -1,8 +1,8 @@
 export const esCopy = {
   sections: {
     cover: {
-      title: "Proyecto Heber Álvarez",
-      subtitle: "Portafolio de desarrollo frontend",
+      title: "Heber Álvarez",
+      subtitle: "Portafolio frontend",
       intro:
         "Diseño y desarrollo interfaces web con foco en detalle, performance y una experiencia de usuario limpia y moderna.",
     },

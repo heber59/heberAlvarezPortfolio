@@ -22,7 +22,7 @@ export function Tabs({ current, onChange }: TabsProps) {
   const labels = copy[lang].ui.tabs;
 
   return (
-    <div className="flex h-full flex-col items-end justify-center gap-2">
+    <div className="flex h-full flex-col items-end justify-center gap-6">
       {sectionsOrder.map((key, index) => {
         const isActive = current === key;
         const palette = [
@@ -39,7 +39,7 @@ export function Tabs({ current, onChange }: TabsProps) {
             key={key}
             onClick={() => onChange(key)}
             className={[
-              "relative h-10 min-w-[110px] rounded-l-full pl-5 pr-4 text-[11px] font-semibold uppercase tracking-[0.16em]",
+              "relative h-10 min-w-[110px] rounded-r-full pl-5 pr-4 text-[11px] font-semibold uppercase tracking-[0.16em]",
               "shadow-sm transition-transform duration-150",
               isActive
                 ? `${color} text-slate-900 translate-x-0`
