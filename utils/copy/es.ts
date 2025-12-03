@@ -8,8 +8,21 @@ export const esCopy = {
     },
     about: {
       title: "Quién soy",
-      body: "Aquí va un resumen sobre ti, tu experiencia, tu forma de trabajar...",
+      profile: "Perfil profesional",
+      intro: `Soy un desarrollador frontend enfocado en crear interfaces claras, modernas y 
+centradas en la experiencia del usuario. Me apasiona transformar requerimientos 
+en productos funcionales, pulidos y con una ejecución visual precisa.`,
+
+      experience: `Durante más de dos años he construido productos digitales en el sector financiero, 
+trabajando de forma directa con equipos backend, diseño y negocio. Me destaco por 
+mi enfoque en detalle, mi capacidad de resolver problemas y mi compromiso con la 
+calidad del código y la experiencia final.`,
+
+      vision: `Busco seguir creciendo hacia un perfil más completo, fortaleciendo mis bases 
+full stack sin dejar mi especialización en frontend. Mi objetivo es crear 
+interfaces sólidas, accesibles y con impacto real en la experiencia del usuario.`,
     },
+
     projects: {
       title: "Proyectos",
       body: "Selección de proyectos que muestran tu estilo como frontend.",

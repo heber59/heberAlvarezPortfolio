@@ -8,8 +8,22 @@ export const enCopy = {
     },
     about: {
       title: "About me",
-      body: "Short summary about who you are, your experience and how you work...",
+      profile: "Professional profile",
+
+      intro: `I'm a frontend developer focused on building clean, modern interfaces that deliver 
+a smooth and meaningful user experience. I enjoy transforming requirements into 
+polished, functional products with precise visual execution.`,
+
+      experience: `For over two years, I've worked on digital products in the financial sector, 
+collaborating closely with backend teams, designers and business stakeholders. 
+I'm known for my attention to detail, problem-solving mindset and commitment to 
+quality throughout the entire development process.`,
+
+      vision: `My goal is to keep growing into a more complete full-stack profile while 
+continuing to specialize in frontend. I aim to create solid, accessible and 
+high-impact interfaces that elevate the product experience.`,
     },
+
     projects: {
       title: "Projects",
       body: "Selection of projects that show your style as a frontend developer.",
