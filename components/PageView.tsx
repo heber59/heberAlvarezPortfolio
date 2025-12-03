@@ -5,6 +5,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { copy } from "@/utils/copy";
 import type { SectionKey } from "@/components/Tabs";
 import { AboutMe } from "./sections/about/about";
+import { Projects } from "./sections/projects/projects";
 
 interface PageViewProps {
   current: SectionKey;
@@ -28,20 +29,11 @@ export function PageView({ current }: PageViewProps) {
           style={{ transformOrigin: "left center" }}
           className="h-full w-full"
         >
-          <div className="grid h-full grid-cols-2 gap-10">
-            <div className="flex flex-col justify-center gap-4 pr-4">
+          <div className="grid h-full grid-cols-2 gap-6">
+            <div className="flex flex-col pr-4">
               {section === "about" && <AboutMe />}
 
-              {section === "projects" && (
-                <>
-                  <h2 className="font-manrope text-2xl font-semibold text-slate-900">
-                    {c.projects.title}
-                  </h2>
-                  <p className="font-inter text-sm md:text-base leading-relaxed text-slate-700">
-                    {c.projects.body}
-                  </p>
-                </>
-              )}
+              {section === "projects" && <Projects />}
 
               {section === "skills" && (
                 <>
@@ -69,14 +61,7 @@ export function PageView({ current }: PageViewProps) {
             <div className="flex flex-col justify-center gap-4 pl-4">
               {section === "about" && <AboutMe secondPage />}
 
-              {section === "projects" && (
-                <>
-                  <p className="font-inter text-sm md:text-base leading-relaxed text-slate-700">
-                    Aquí irán las tarjetas de proyectos, con links, stacks y una
-                    vista rápida de cada trabajo.
-                  </p>
-                </>
-              )}
+              {section === "projects" && <Projects secondPage />}
 
               {section === "skills" && (
                 <p className="font-inter text-sm md:text-base leading-relaxed text-slate-700">

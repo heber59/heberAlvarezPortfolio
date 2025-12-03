@@ -21,7 +21,7 @@ export function Folder() {
           className={` ${isCover ? `bg-amber-300 pr-4 rounded-[3rem]` : ``}`}
         >
           <div
-            className={`relative z-10 h-[85vh] rounded-[1.75rem] border border-amber-400 bg-amber-300 shadow-[0_32px_90px_rgba(15,23,42,0.28)] transition-[width] duration-500 ease-in-out overflow-visible
+            className={`relative z-10 h-[95vh] rounded-[1.75rem] border border-amber-400 bg-amber-300 shadow-[0_32px_90px_rgba(15,23,42,0.28)] transition-[width] duration-500 ease-in-out overflow-visible
           ${isCover ? "w-[min(67vw,660px)]" : "w-[min(80vw,1040px)]"}`}
           >
             {isCover && (
@@ -82,7 +82,7 @@ export function Folder() {
         </div>
 
         {isCover && (
-          <div className="-ml-6  flex flex-col items-start">
+          <div className="-ml-8  flex flex-col items-start">
             <Tabs current={currentSection} onChange={setCurrentSection} />
           </div>
         )}

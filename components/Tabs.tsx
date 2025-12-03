@@ -43,7 +43,7 @@ export function Tabs({ current, onChange }: TabsProps) {
               "shadow-sm transition-transform duration-150",
               isActive
                 ? `${color} text-slate-900 translate-x-0`
-                : "bg-slate-200 text-slate-700 hover:-translate-x-1",
+                : "bg-slate-200 text-slate-700 hover:translate-x-3",
             ].join(" ")}
           >
             <span className="inline-block align-middle">{labels[key]}</span>
