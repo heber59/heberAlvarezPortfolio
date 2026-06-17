@@ -2,9 +2,9 @@ export const esCopy = {
   sections: {
     cover: {
       title: "Heber Álvarez",
-      subtitle: "Portafolio frontend",
+      subtitle: "Senior Frontend Engineer",
       intro: `
-Diseño y desarrollo interfaces web con foco en detalle, performance y una experiencia de usuario limpia y moderna.
+Construyo interfaces web rápidas y accesibles — y los design systems, la arquitectura y el tooling que las mantienen sólidas mientras el equipo y el producto escalan.
       `,
     },
     about: {
@@ -12,22 +12,25 @@ Diseño y desarrollo interfaces web con foco en detalle, performance y una exper
       profile: "Perfil profesional",
 
       intro: `
-Soy un desarrollador frontend enfocado en crear interfaces claras, modernas y 
-centradas en la experiencia del usuario. Me apasiona transformar requerimientos 
-en productos funcionales, pulidos y con una ejecución visual precisa.
+Soy un ingeniero frontend senior que convierte requerimientos de producto
+complejos en interfaces rápidas, accesibles y fáciles de mantener. Me importa
+tanto el detalle que siente el usuario como la arquitectura sobre la que se
+apoya el resto del equipo.
       `,
 
       experience: `
-Durante más de dos años he construido productos digitales en el sector financiero, 
-trabajando de forma directa con equipos backend, diseño y negocio. Me destaco por 
-mi enfoque en detalle, mi capacidad de resolver problemas y mi compromiso con la 
-calidad del código y la experiencia final.
+He construido durante años software en producción para el sector financiero:
+liderando design systems, publicando una librería de componentes en npm e
+integrando frontends con servicios de IA y telefonía. Trabajo de cerca con
+backend, diseño y negocio, y defiendo la arquitectura limpia, el code review
+y la accesibilidad.
       `,
 
       vision: `
-Busco seguir creciendo hacia un perfil más completo, fortaleciendo mis bases 
-full stack sin dejar mi especialización en frontend. Mi objetivo es crear 
-interfaces sólidas, accesibles y con impacto real en la experiencia del usuario.
+Me hago cargo del ciclo completo de una interfaz: arquitectura, performance,
+accesibilidad y el tooling que mantiene sano el código. Cada vez más hands-on
+con cloud e infraestructura (AWS, Docker, Terraform) para llevar un producto
+de la idea a producción de punta a punta.
       `,
     },
 
@@ -41,13 +44,15 @@ interfaces sólidas, accesibles y con impacto real en la experiencia del usuario
         {
           id: "npm-library",
           title: "Librería de componentes en npm",
-          role: "Frontend & diseño de componentes",
+          role: "Lead frontend · Design systems",
           short: `
 Librería reutilizable de componentes usada en varios productos internos.
           `,
           description: `
-Librería de componentes publicada en npm (3 paquetes) para unificar estilos, 
-patrones de UI y reglas de negocio en distintos productos del ecosistema de la empresa.
+Design system publicado en npm (3 paquetes) para unificar estilos, patrones de
+UI y reglas de negocio entre varios productos. Lideré el diseño de la API, la
+estrategia de versionado y la base de accesibilidad para que los equipos
+entregaran más rápido y mantuvieran consistencia.
           `,
           stack: ["React", "TypeScript", "Vite", "Styled Components", "npm"],
           image: "/assets/images/projects/npm-library.webp",
@@ -56,13 +61,15 @@ patrones de UI y reglas de negocio en distintos productos del ecosistema de la e
         {
           id: "ai-twilio",
           title: "AI + Twilio flows",
-          role: "Integración IA / frontend",
+          role: "Frontend · Integración IA",
           short: `
 Flujos conversacionales con IA conectados a Twilio y servicios backend.
           `,
           description: `
-Implementación de chatbots y manejo de números telefónicos con Twilio, integrando 
+IA conversacional y flujos de números telefónicos sobre Twilio, conectando
 lógica de negocio, servicios REST y una interfaz limpia para el usuario final.
+Enfocado en un manejo de estado resiliente y una UX que se mantiene clara aun
+cuando el flujo de fondo es complejo.
           `,
           stack: ["React", "Node.js", "Fastify", "Twilio", "PostgreSQL"],
           image: "/assets/images/projects/ai-twilio.webp",
@@ -70,11 +77,11 @@ lógica de negocio, servicios REST y una interfaz limpia para el usuario final.
         {
           id: "sistema-saas",
           title: "Sistema SaaS",
-          role: "Frontend Developer",
+          role: "Frontend Engineer",
           short:
             "Interfaz generada y adaptada para simular un sistema SaaS basado en flujos reales.",
           description:
-            "Construcción de componentes, estructura y navegación de un sistema SaaS. La UI fue generada por IA y ajustada para fines de demostración sin exponer información sensible.",
+            "Componentes, estructura y navegación de un sistema SaaS. La UI fue generada por IA y ajustada para fines de demostración sin exponer información sensible — un ejercicio de entregar una superficie de producto pulida en poco tiempo.",
           stack: [
             "React",
             "Next.js",
@@ -91,15 +98,76 @@ lógica de negocio, servicios REST y una interfaz limpia para el usuario final.
 
     skills: {
       title: "Skills",
-      body: `
-React, Next.js, TypeScript, Tailwind, Framer Motion...
+      eyebrow: "Capacidades",
+      intro: `
+Un core frontend profundo, respaldado por la arquitectura, la infraestructura
+y el tooling necesarios para hacerme cargo de un producto de punta a punta.
       `,
+      groups: [
+        {
+          label: "Frontend",
+          items: [
+            "React 19",
+            "Next.js",
+            "TypeScript",
+            "Tailwind",
+            "Framer Motion",
+            "Styled Components",
+          ],
+        },
+        {
+          label: "Arquitectura & Calidad",
+          items: [
+            "Design systems",
+            "Librerías de componentes",
+            "Accesibilidad (a11y)",
+            "Performance",
+            "Testing",
+            "Code review",
+          ],
+        },
+        {
+          label: "Backend & APIs",
+          items: ["Node.js", "Fastify", "REST", "PostgreSQL", "Twilio"],
+        },
+        {
+          label: "Cloud & DevOps",
+          items: [
+            "AWS (EC2, S3, CloudFront)",
+            "Docker",
+            "Terraform",
+            "Vercel",
+            "CI/CD",
+          ],
+        },
+      ],
     },
     contact: {
       title: "Contacto",
+      eyebrow: "Hablemos",
       body: `
-Puedes contactarme en: tunombre@correo.com
+Abierto a roles senior de frontend y a colaboraciones de producto. Las formas más rápidas de contactarme:
       `,
+      channels: [
+        {
+          id: "email",
+          label: "Email",
+          value: "hesan0308@gmail.com",
+          href: "mailto:hesan0308@gmail.com",
+        },
+        {
+          id: "github",
+          label: "GitHub",
+          value: "github.com/heber59",
+          href: "https://github.com/heber59",
+        },
+        {
+          id: "linkedin",
+          label: "LinkedIn",
+          value: "in/heber-alvarez",
+          href: "https://www.linkedin.com/in/heber-alvarez",
+        },
+      ],
     },
   },
   ui: {
