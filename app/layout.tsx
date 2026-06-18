@@ -14,8 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Proyecto Heber Álvarez",
-  description: "Portafolio tipo carpeta de Heber  Álvarez",
+  title: "Heber Álvarez · Senior Frontend Engineer",
+  description:
+    "Portfolio of Heber Álvarez — senior frontend engineer building fast, accessible interfaces, design systems and the tooling behind them.",
 };
 
 export default function RootLayout({
