@@ -52,23 +52,32 @@ export function Folder() {
             {!isCover && (
               <>
                 <div className="absolute inset-0 px-10 pt-12 pb-10 z-20">
-                  <div className="relative h-full rounded-2xl bg-white shadow-[0_22px_70px_rgba(15,23,42,0.25)]">
-                    <div className="flex items-start justify-between px-10 pt-7 pb-4">
-                      <div className="flex flex-col gap-1">
-                        <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-500">
-                          {labels.subtitle}
-                        </span>
-                        <span className="font-manrope text-sm md:text-base font-semibold text-slate-900">
-                          {labels.title}
-                        </span>
+                  <div className="flex h-full w-full gap-3">
+                    <div className="relative flex h-full flex-1 flex-col rounded-l-2xl rounded-r-md bg-white shadow-[0_22px_70px_rgba(15,23,42,0.25)]">
+                      <div className="flex items-start justify-between px-9 pt-7 pb-4">
+                        <div className="flex flex-col gap-1">
+                          <span className="font-manrope text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-500">
+                            {labels.subtitle}
+                          </span>
+                          <span className="font-manrope text-sm md:text-base font-semibold text-slate-900">
+                            {labels.title}
+                          </span>
+                        </div>
                       </div>
-                      <LanguageSwitcher />
+                      <div className="relative flex-1 px-9 pb-8 pt-2">
+                        <PageView current={currentSection} side="left" />
+                      </div>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-slate-900/12 to-transparent" />
                     </div>
 
-                    <div className="pointer-events-none absolute inset-y-6 left-1/2 w-px -translate-x-1/2 bg-slate-200 shadow-[0_0_24px_rgba(15,23,42,0.35)] opacity-70" />
-
-                    <div className="relative h-[calc(100%-72px)] px-10 pb-8 pt-2">
-                      <PageView current={currentSection} />
+                    <div className="relative flex h-full flex-1 flex-col rounded-r-2xl rounded-l-md bg-white shadow-[0_22px_70px_rgba(15,23,42,0.25)]">
+                      <div className="flex items-start justify-end px-9 pt-7 pb-4">
+                        <LanguageSwitcher />
+                      </div>
+                      <div className="relative flex-1 px-9 pb-8 pt-2">
+                        <PageView current={currentSection} side="right" />
+                      </div>
+                      <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-slate-900/12 to-transparent" />
                     </div>
                   </div>
                 </div>
