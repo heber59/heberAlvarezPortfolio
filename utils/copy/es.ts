@@ -2,9 +2,9 @@ export const esCopy = {
   sections: {
     cover: {
       title: "Heber Álvarez",
-      subtitle: "Senior Frontend Engineer",
+      subtitle: "Senior Software Engineer · Frontend-focused",
       intro: `
-Construyo interfaces web rápidas y accesibles — y los design systems, la arquitectura y el tooling que las mantienen sólidas mientras el equipo y el producto escalan.
+Me hago cargo de productos de punta a punta — desde interfaces web rápidas y accesibles hasta los servicios Node y la infraestructura en AWS que las sostienen — y los design systems, la arquitectura y el tooling que mantienen al equipo entregando mientras escala.
       `,
     },
     about: {
@@ -12,25 +12,27 @@ Construyo interfaces web rápidas y accesibles — y los design systems, la arqu
       profile: "Perfil profesional",
 
       intro: `
-Soy un ingeniero frontend senior que convierte requerimientos de producto
-complejos en interfaces rápidas, accesibles y fáciles de mantener. Me importa
-tanto el detalle que siente el usuario como la arquitectura sobre la que se
-apoya el resto del equipo.
+Soy un ingeniero de software senior, enfocado en frontend, que convierte
+requerimientos de producto complejos en productos rápidos, accesibles y fáciles
+de mantener — desde la interfaz hasta los servicios e infraestructura que la
+sostienen. Me importa tanto el detalle que siente el usuario como la
+arquitectura sobre la que se apoya el resto del equipo.
       `,
 
       experience: `
-He construido durante años software en producción para el sector financiero:
-liderando design systems, publicando una librería de componentes en npm e
-integrando frontends con servicios de IA y telefonía. Trabajo de cerca con
-backend, diseño y negocio, y defiendo la arquitectura limpia, el code review
-y la accesibilidad.
+He construido durante [fill: # años] software en producción para el sector
+financiero: liderando design systems, publicando una librería de componentes de
+3 paquetes en npm usada por [fill: # equipos/productos] e integrando frontends
+con servicios de IA y telefonía. Trabajo a diario en todo el stack con backend,
+diseño y negocio, y defiendo la arquitectura limpia, el code review y la
+accesibilidad.
       `,
 
       vision: `
-Me hago cargo del ciclo completo de una interfaz: arquitectura, performance,
-accesibilidad y el tooling que mantiene sano el código. Cada vez más hands-on
-con cloud e infraestructura (AWS, Docker, Terraform) para llevar un producto
-de la idea a producción de punta a punta.
+Me hago cargo del ciclo completo de un producto: arquitectura, performance,
+accesibilidad y el tooling que mantiene sano el código. Igual de hands-on con el
+backend (Node, Fastify, PostgreSQL) y la infraestructura en cloud (AWS, Docker,
+Terraform), llevando el trabajo de la idea a producción de punta a punta.
       `,
     },
 
@@ -51,8 +53,9 @@ Librería reutilizable de componentes usada en varios productos internos.
           description: `
 Design system publicado en npm (3 paquetes) para unificar estilos, patrones de
 UI y reglas de negocio entre varios productos. Lideré el diseño de la API, la
-estrategia de versionado y la base de accesibilidad para que los equipos
-entregaran más rápido y mantuvieran consistencia.
+estrategia de versionado y la base de accesibilidad, reduciendo el tiempo de
+construcción de UI en [fill: ~X%] para [fill: # equipos] y manteniendo la
+consistencia a escala.
           `,
           stack: ["React", "TypeScript", "Vite", "Styled Components", "npm"],
           image: "/assets/images/projects/npm-library.webp",
@@ -68,8 +71,9 @@ Flujos conversacionales con IA conectados a Twilio y servicios backend.
           description: `
 IA conversacional y flujos de números telefónicos sobre Twilio, conectando
 lógica de negocio, servicios REST y una interfaz limpia para el usuario final.
-Enfocado en un manejo de estado resiliente y una UX que se mantiene clara aun
-cuando el flujo de fondo es complejo.
+Diseñé el manejo de estado resiliente y una UX que se mantiene clara aun cuando
+el flujo de fondo es complejo, atendiendo [fill: # llamadas/conversaciones] en
+producción.
           `,
           stack: ["React", "Node.js", "Fastify", "Twilio", "PostgreSQL"],
           image: "/assets/images/projects/ai-twilio.webp",
@@ -77,11 +81,11 @@ cuando el flujo de fondo es complejo.
         {
           id: "sistema-saas",
           title: "Sistema SaaS",
-          role: "Frontend Engineer",
+          role: "Frontend Engineer · Arquitectura de producto",
           short:
-            "Interfaz generada y adaptada para simular un sistema SaaS basado en flujos reales.",
+            "Superficie de producto SaaS de punta a punta — arquitectura, modelo de componentes y navegación modelados sobre flujos reales.",
           description:
-            "Componentes, estructura y navegación de un sistema SaaS. La UI fue generada por IA y ajustada para fines de demostración sin exponer información sensible — un ejercicio de entregar una superficie de producto pulida en poco tiempo.",
+            "Una superficie de producto SaaS completa: diseñé la arquitectura de componentes, el sistema de layout y la navegación alrededor de flujos reales, usé IA para acelerar la primera versión y la refiné hasta una interfaz coherente y de calidad de producción — sin exponer datos sensibles. Un ejercicio de entregar una superficie de producto pulida y mantenible en poco tiempo.",
           stack: [
             "React",
             "Next.js",
@@ -146,7 +150,7 @@ y el tooling necesarios para hacerme cargo de un producto de punta a punta.
       title: "Contacto",
       eyebrow: "Hablemos",
       body: `
-Abierto a roles senior de frontend y a colaboraciones de producto. Las formas más rápidas de contactarme:
+Abierto a roles senior de software / frontend — remoto (zonas horarias de EE. UU.) o reubicación. [fill: estatus de autorización laboral, ej. "Autorizado para trabajar en EE. UU." o "Abierto a patrocinio H-1B/TN"]. Las formas más rápidas de contactarme:
       `,
       channels: [
         {

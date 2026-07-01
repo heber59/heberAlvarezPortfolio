@@ -1,10 +1,10 @@
 export const enCopy = {
   sections: {
     cover: {
-      title: "Heber Álvarez ",
-      subtitle: "Senior Frontend Engineer",
+      title: "Heber Álvarez",
+      subtitle: "Senior Software Engineer · Frontend-focused",
       intro: `
-I build fast, accessible web interfaces — and the design systems, architecture and tooling that keep them maintainable as teams and products scale.
+I own products end to end — from fast, accessible web interfaces to the Node services and AWS infrastructure behind them — and the design systems, architecture and tooling that keep teams shipping as they scale.
       `,
     },
     about: {
@@ -12,23 +12,26 @@ I build fast, accessible web interfaces — and the design systems, architecture
       profile: "Professional profile",
 
       intro: `
-I'm a senior frontend engineer who turns complex product requirements into
-interfaces that are fast, accessible and easy to maintain. I care about the
-details users feel and the architecture the rest of the team relies on.
+I'm a senior software engineer, frontend-focused, who turns complex product
+requirements into products that are fast, accessible and easy to maintain —
+from the interface down to the services and infrastructure behind it. I care
+about the details users feel and the architecture the rest of the team relies on.
       `,
 
       experience: `
-I've spent years building production software for the financial sector — owning
-design systems, shipping a component library to npm, and integrating frontends
-with AI and telephony services. I work closely with backend, design and product,
-and I'm a strong advocate for clean architecture, code review and accessibility.
+I've spent [fill: # years] building production software for the financial
+sector — owning design systems, shipping a 3-package component library to npm
+used by [fill: # teams/products], and integrating frontends with AI and
+telephony services. I work day to day across the stack with backend, design and
+product, and I'm a strong advocate for clean architecture, code review and
+accessibility.
       `,
 
       vision: `
-I own the full lifecycle of an interface: architecture, performance,
-accessibility and the tooling that keeps a codebase healthy. I'm increasingly
-hands-on with cloud and infrastructure (AWS, Docker, Terraform) so I can take
-a product from idea to production end to end.
+I own the full lifecycle of a product: architecture, performance, accessibility
+and the tooling that keeps a codebase healthy. I'm equally hands-on with the
+backend (Node, Fastify, PostgreSQL) and cloud infrastructure (AWS, Docker,
+Terraform), taking work from idea to production end to end.
       `,
     },
 
@@ -49,8 +52,8 @@ Reusable component library used across multiple internal products.
           description: `
 Design system published on npm (3 packages) to unify styles, UI patterns and
 business rules across multiple products. I led the API design, versioning
-strategy and accessibility baseline so product teams could ship faster and stay
-consistent.
+strategy and accessibility baseline, cutting UI build time by [fill: ~X%] for
+[fill: # product teams] and keeping them consistent at scale.
           `,
           stack: ["React", "TypeScript", "Vite", "Styled Components", "npm"],
           image: "/assets/images/projects/npm-library.webp",
@@ -65,8 +68,9 @@ AI conversational flows connected to Twilio and backend services.
           `,
           description: `
 Conversational AI and phone-number workflows built on Twilio, wiring business
-logic, REST services and a clean interface for end users. Focused on resilient
-state handling and a UX that stays clear even when the underlying flow is complex.
+logic, REST services and a clean interface for end users. I designed the
+resilient state handling and a UX that stays clear even when the underlying flow
+is complex, handling [fill: # calls/conversations] in production.
           `,
           stack: ["React", "Node.js", "Fastify", "Twilio", "PostgreSQL"],
           image: "/assets/images/projects/ai-twilio.webp",
@@ -74,11 +78,11 @@ state handling and a UX that stays clear even when the underlying flow is comple
         {
           id: "sistema-saas",
           title: "SaaS system",
-          role: "Frontend Engineer",
+          role: "Frontend Engineer · Product architecture",
           short:
-            "Interface generated and adapted to simulate a SaaS system based on real workflows.",
+            "End-to-end SaaS product surface — architecture, component model and navigation modeled on real workflows.",
           description:
-            "Components, layout and navigation for a SaaS system. The UI was AI-generated and refined for demonstration purposes without exposing any sensitive information — a study in shipping a polished product surface quickly.",
+            "A complete SaaS product surface: I designed the component architecture, layout system and navigation around real-world workflows, then used AI to accelerate the first pass and refined it into a coherent, production-quality interface — no sensitive data exposed. A study in shipping a polished, maintainable product surface fast.",
           stack: [
             "React",
             "Next.js",
@@ -143,7 +147,7 @@ needed to own a product end to end.
       title: "Contact",
       eyebrow: "Get in touch",
       body: `
-Open to senior frontend roles and product collaborations. The fastest ways to reach me:
+Open to senior software / frontend roles — remote (US time zones) or relocation. [fill: work authorization, e.g. "Authorized to work in the US" or "Open to H-1B/TN sponsorship"]. The fastest ways to reach me:
       `,
       channels: [
         {

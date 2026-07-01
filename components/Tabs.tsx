@@ -81,7 +81,7 @@ export function Tabs({ current, onChange }: TabsProps) {
             role="tab"
             type="button"
             aria-selected={isActive}
-            aria-controls="section-panel"
+            aria-controls="section-panel-left section-panel-right"
             tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(key)}
             onKeyDown={(e) => onKeyDown(e, index)}
