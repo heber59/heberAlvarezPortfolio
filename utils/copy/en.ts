@@ -38,6 +38,8 @@ export const enCopy = {
         liveDemo: "Live demo",
         source: "View source",
         close: "Close",
+        interactiveDemo: "Interactive demo",
+        closeDemo: "Close demo",
         private: "Private professional project",
       },
       items: [
@@ -84,6 +86,20 @@ export const enCopy = {
           packageUrl: "https://www.npmjs.com/package/@isettingkit/business-rules",
         },
         {
+          id: "sistema-saas",
+          title: "SaaS Product Interface",
+          category: "Interactive product demo",
+          status: "Public demo",
+          summary:
+            "A complete SaaS product surface with component architecture, layout and navigation modelled around real operational workflows.",
+          contribution:
+            "Designed the component architecture, layout system and navigation, then refined an AI-assisted first pass into a coherent and maintainable product interface.",
+          outcome:
+            "An interactive demonstration of a production-style SaaS experience that can be explored without exposing confidential client data.",
+          stack: ["React", "Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Figma"],
+          demoUrl: "https://sistemasaas.vercel.app/",
+        },
+        {
           id: "portfolio",
           title: "Interactive Portfolio Folder",
           category: "Open source · Personal project",
@@ -95,7 +111,6 @@ export const enCopy = {
           outcome:
             "A distinctive portfolio experience that remains functional across desktop and mobile devices.",
           stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-          demoUrl: "https://heber-alvarez-portfolio.vercel.app/",
           sourceUrl: "https://github.com/heber59/heberAlvarezPortfolio",
         },
       ],
