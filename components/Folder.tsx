@@ -66,7 +66,7 @@ export function Folder() {
                   <div className="h-full px-5 py-7 sm:px-8 lg:min-h-0 lg:overflow-y-auto lg:px-10 lg:py-10"><PageView current={currentSection} side="left" /></div>
                   <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-7 bg-gradient-to-l from-black/10 to-transparent lg:block" />
                 </article>
-                <article aria-label={`${ui.page} 2`} className="relative ml-2 min-h-[55svh] max-w-[calc(100%-0.5rem)] overflow-hidden rounded-[20px] border border-black/10 bg-[#fffdf7] shadow-[0_12px_30px_rgba(42,35,25,.14)] lg:ml-0 lg:min-h-0 lg:max-w-none lg:rounded-l-sm lg:rounded-r-[24px] lg:border-l-0">
+                <article aria-label={`${ui.page} 2`} className="relative ml-2 min-h-[55svh] max-w-[calc(100%_-_0.5rem)] overflow-hidden rounded-[20px] border border-black/10 bg-[#fffdf7] shadow-[0_12px_30px_rgba(42,35,25,.14)] lg:ml-0 lg:min-h-0 lg:max-w-none lg:rounded-l-sm lg:rounded-r-[24px] lg:border-l-0">
                   <div className="h-full px-5 py-7 sm:px-8 lg:min-h-0 lg:overflow-y-auto lg:px-10 lg:py-10"><PageView current={currentSection} side="right" /></div>
                   <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-7 bg-gradient-to-r from-black/10 to-transparent lg:block" />
                 </article>
