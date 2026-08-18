@@ -125,7 +125,7 @@ export const enCopy = {
         { id: "linkedin", label: "LinkedIn", value: "Heber Santiago Alvarez", href: "https://www.linkedin.com/in/heber-santiago-alvarez-rincon-799427230/" },
         { id: "github", label: "GitHub", value: "github.com/heber59", href: "https://github.com/heber59" },
         { id: "npm", label: "npm", value: "@isettingkit/business-rules", href: "https://www.npmjs.com/package/@isettingkit/business-rules" },
-        { id: "cv", label: "Download CV", value: "PDF", href: "/Heber_Alvarez.pdf", download: true },
+        { id: "cv", label: "Download CV", value: "PDF", href: "/cv", download: true },
       ],
     },
   },
