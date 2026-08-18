@@ -31,17 +31,17 @@ export function Tabs({ current, onChange, orientation = "vertical" }: { current:
   };
 
   return (
-    <div ref={listRef} role="tablist" aria-orientation={orientation} aria-label={lang === "es" ? "Secciones del portafolio" : "Portfolio sections"} className={orientation === "horizontal" ? "flex gap-2 overflow-x-auto pb-1" : "flex flex-col gap-3 pt-3"}>
+    <div ref={listRef} role="tablist" aria-orientation={orientation} aria-label={lang === "es" ? "Secciones del portafolio" : "Portfolio sections"} className={orientation === "horizontal" ? "flex gap-2 overflow-x-auto pb-1" : "flex flex-col gap-2 pt-2"}>
       {sectionsOrder.map((key, index) => {
         const active = current === key;
         return (
           <button key={key} id={`tab-${key}`} role="tab" type="button" aria-selected={active} aria-controls={`panel-${key}`} tabIndex={active ? 0 : -1} onClick={() => onChange(key)} onKeyDown={(event) => onKeyDown(event, index)} className={[
             "min-h-11 shrink-0 whitespace-nowrap font-semibold uppercase tracking-[0.12em] transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950",
-            orientation === "horizontal" ? "rounded-xl px-4 py-2 text-xs shadow-sm" : "min-w-[136px] rounded-r-xl border border-l-0 border-black/10 px-5 py-3 text-left text-[11px] shadow-[0_5px_14px_rgba(42,35,25,.14)]",
+            orientation === "horizontal" ? "rounded-xl px-4 py-2 text-xs shadow-sm" : "w-[100px] rounded-r-lg border border-l-0 border-black/10 px-3 py-2 text-left text-[10px] shadow-[0_4px_10px_rgba(42,35,25,.12)] lg:w-[108px]",
             active
-              ? `${palette[index]} translate-x-2 text-slate-950 ring-2 ring-slate-950/15`
+              ? `${palette[index]} translate-x-1 text-slate-950 ring-2 ring-slate-950/15`
               : orientation === "vertical"
-                ? `${palette[index]} text-slate-800 opacity-65 hover:translate-x-1 hover:opacity-100`
+                ? `${palette[index]} text-slate-800 opacity-70 hover:translate-x-0.5 hover:opacity-100`
                 : "bg-white/85 text-slate-700 hover:bg-white",
           ].join(" ")}>{labels[key]}</button>
         );
