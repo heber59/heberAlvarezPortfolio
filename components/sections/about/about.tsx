@@ -20,8 +20,8 @@ export function AboutMe({ secondPage }: { secondPage?: boolean }) {
 
   return (
     <div className="flex h-full flex-col justify-center">
-      <div className="relative mb-7 h-52 w-52 overflow-hidden rounded-[42px] border border-slate-200 bg-slate-100 shadow-sm sm:h-60 sm:w-60">
-        <Image src="/assets/images/me.jpeg" alt={content.portraitAlt} fill priority sizes="(max-width: 1024px) 240px, 260px" className="object-cover" />
+      <div className="relative mb-7 aspect-[4/5] w-52 overflow-hidden rounded-[36px] border border-slate-200 bg-slate-100 shadow-sm sm:w-60">
+        <Image src="/assets/images/me.jpeg" alt={content.portraitAlt} fill priority sizes="(max-width: 640px) 208px, 240px" className="object-contain object-center" />
       </div>
       <h2 tabIndex={-1} className="font-manrope text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">{content.title}</h2>
       <p className="mt-6 max-w-lg font-inter text-base leading-relaxed text-slate-700">{content.intro}</p>
