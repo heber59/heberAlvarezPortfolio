@@ -33,8 +33,8 @@ export function Folder() {
 
   return (
     <main id="main-content" className="min-h-svh overflow-x-hidden bg-stone-200 px-3 py-4 text-slate-900 sm:px-6 lg:grid lg:place-items-center">
-      <div className="mx-auto w-full max-w-[1440px]">
-        <div className="sticky top-0 z-40 -mx-3 mb-3 bg-stone-200/90 px-3 py-2 backdrop-blur lg:hidden">
+      <div className="mx-auto w-full max-w-[1440px] md:pr-24 lg:pr-28">
+        <div className="sticky top-0 z-40 -mx-3 mb-3 bg-stone-200/90 px-3 py-2 backdrop-blur md:hidden">
           <Tabs current={currentSection} onChange={navigate} orientation="horizontal" />
         </div>
 
@@ -75,7 +75,7 @@ export function Folder() {
             </section>
           )}
 
-          <div className="absolute right-0 top-8 z-30 hidden translate-x-[calc(100%_-_0.5rem)] lg:block">
+          <div className="absolute right-0 top-8 z-30 hidden translate-x-[calc(100%_-_0.35rem)] md:block">
             <Tabs current={currentSection} onChange={navigate} orientation="vertical" />
           </div>
         </div>
