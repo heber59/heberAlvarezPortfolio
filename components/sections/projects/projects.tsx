@@ -24,7 +24,9 @@ type Project = {
 export function Projects() {
   const { lang } = useLanguage();
   const content = copy[lang].sections.projects;
-  const projects: readonly Project[] = content.items;
+  // Both language files use the same project schema. Normalising the union here
+  // keeps the dialog state independent from TypeScript's per-locale literals.
+  const projects = content.items as readonly Project[];
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
