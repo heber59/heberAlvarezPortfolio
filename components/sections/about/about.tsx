@@ -1,47 +1,31 @@
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { copy } from "@/utils/copy";
 
 export function AboutMe({ secondPage }: { secondPage?: boolean }) {
   const { lang } = useLanguage();
-  const c = copy[lang].sections.about;
+  const content = copy[lang].sections.about;
 
   if (secondPage) {
     return (
-      <div className="flex h-full flex-col  gap-6 lg:gap-14">
-        <div className="flex  flex-col lg:gap-6">
-          <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-400">
-            {c.profile}
-          </p>
-
-          <p className="font-inter text-sm md:text-base leading-relaxed lg:leading-loose text-slate-700 max-w-xl">
-            {c.experience}
-          </p>
-        </div>
-        <div className="h-px w-full rounded-full bg-slate-300/80 " />
-
-        <p className="font-inter text-sm md:text-base  lg:leading-loose text-slate-700 max-w-xl">
-          {c.vision}
-        </p>
+      <div className="flex h-full flex-col justify-center gap-6">
+        <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">{content.profile}</p>
+        <p className="font-inter text-base leading-relaxed text-slate-700">{content.experience}</p>
+        <div className="h-px bg-slate-200" />
+        <p className="font-inter text-base leading-relaxed text-slate-700">{content.vision}</p>
+        <p className="rounded-2xl border border-sky-200 bg-sky-50 p-4 font-inter text-sm leading-relaxed text-sky-950">{content.foundation}</p>
       </div>
     );
   }
 
   return (
-    <div className="flex h-full flex-col  gap-3 pr-8">
-      <div className="flex pt-4 justify-center">
-        <img
-          src="/assets/images/me.jpeg"
-          alt="profile"
-          className="h-auto w-[min(220px,20vw)] rounded-[50px] object-cover border border-slate-300 float-right ml-6 mb-4"
-        />
+    <div className="flex h-full flex-col justify-center">
+      <div className="relative mb-7 h-52 w-52 overflow-hidden rounded-[42px] border border-slate-200 bg-slate-100 shadow-sm sm:h-60 sm:w-60">
+        <Image src="/assets/images/me.jpeg" alt={content.portraitAlt} fill priority sizes="(max-width: 1024px) 240px, 260px" className="object-cover" />
       </div>
-      <h2 className="font-manrope text-2xl md:text-3xl font-semibold text-slate-900">
-        {c.title}
-      </h2>
-
-      <p className="font-inter text-sm md:text-base leading-relaxed text-slate-700">
-        {c.intro}
-      </p>
+      <h2 tabIndex={-1} className="font-manrope text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">{content.title}</h2>
+      <p className="mt-6 max-w-lg font-inter text-base leading-relaxed text-slate-700">{content.intro}</p>
     </div>
   );
 }
+
