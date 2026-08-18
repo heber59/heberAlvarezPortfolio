@@ -100,6 +100,34 @@ export const enCopy = {
           demoUrl: "https://sistemasaas.vercel.app/",
         },
         {
+          id: "aws-cdk-networking-lab",
+          title: "AWS CDK Networking Lab",
+          category: "Open source · Cloud infrastructure",
+          status: "Public repository",
+          summary:
+            "A production-inspired AWS infrastructure lab built with CDK, multi-environment stages, networking isolation and automated delivery workflows.",
+          contribution:
+            "Modelled a multi-AZ VPC, public and private application tiers, isolated database subnets, load-balancer routing, security groups and GitHub Actions workflows for validation and promotion.",
+          outcome:
+            "A documented infrastructure-as-code reference that demonstrates AWS networking, environment promotion, IAM/OIDC and CI/CD fundamentals.",
+          stack: ["AWS CDK", "TypeScript", "VPC", "EC2", "Aurora", "GitHub Actions"],
+          sourceUrl: "https://github.com/heber59/aws-cdk-networking-lab",
+        },
+        {
+          id: "stock-ai-backend",
+          title: "Stock AI Prediction Backend",
+          category: "Open source · Machine learning backend",
+          status: "Public repository",
+          summary:
+            "A FastAPI and XGBoost backend that transforms historical market data into probabilistic stock-movement predictions through a reproducible quantitative pipeline.",
+          contribution:
+            "Implemented data ingestion and standardisation, technical feature engineering, quality audits, time-series-aware model training, model persistence and recent-signal inference.",
+          outcome:
+            "A modular pipeline that separates data, features, training and inference while reducing look-ahead bias through time-series validation.",
+          stack: ["Python", "FastAPI", "XGBoost", "pandas", "scikit-learn", "Parquet"],
+          sourceUrl: "https://github.com/heber59/stockAiBackend",
+        },
+        {
           id: "portfolio",
           title: "Interactive Portfolio Folder",
           category: "Open source · Personal project",
