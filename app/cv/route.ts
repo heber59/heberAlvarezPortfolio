@@ -2,7 +2,7 @@ const CV_BASE64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lb
 
 export async function GET() {
   const pdf = Buffer.from(CV_BASE64, "base64");
-  return new Response(pdf, {
+  return new Response(new Uint8Array(pdf), {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": 'attachment; filename="Heber_Alvarez.pdf"',
