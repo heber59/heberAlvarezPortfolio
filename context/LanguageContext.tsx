@@ -1,39 +1,31 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-type Lang = "es" | "en";
-
-interface LanguageContextType {
-  lang: Lang;
-  toggleLang: () => void;
-  setLang: (l: Lang) => void;
-}
-
-const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined
-);
+export type Lang = "es" | "en";
+type LanguageContextType = { lang: Lang; toggleLang: () => void; setLang: (lang: Lang) => void };
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es");
+  const [lang, setLang] = useState<Lang>("es");
 
-  const toggleLang = () => {
-    setLangState((prev) => (prev === "es" ? "en" : "es"));
-  };
+  useEffect(() => {
+    const saved = window.localStorage.getItem("portfolio-lang");
+    const preferred: Lang = saved === "en" || saved === "es" ? saved : navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+    setLang(preferred);
+  }, []);
 
-  const setLang = (l: Lang) => setLangState(l);
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    window.localStorage.setItem("portfolio-lang", lang);
+  }, [lang]);
 
-  return (
-    <LanguageContext.Provider value={{ lang, toggleLang, setLang }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={{ lang, setLang, toggleLang: () => setLang((current) => current === "es" ? "en" : "es") }}>{children}</LanguageContext.Provider>;
 }
 
 export function useLanguage() {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
-  return ctx;
+  const context = useContext(LanguageContext);
+  if (!context) throw new Error("useLanguage must be used within a LanguageProvider");
+  return context;
 }
+
