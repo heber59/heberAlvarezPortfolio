@@ -4,99 +4,45 @@ import { useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { copy } from "@/utils/copy";
 
-const sectionsOrder = [
-  "cover",
-  "about",
-  "projects",
-  "skills",
-  "contact",
-] as const;
+export const sectionsOrder = ["cover", "about", "projects", "skills", "contact"] as const;
 export type SectionKey = (typeof sectionsOrder)[number];
 
-const palette = [
-  "bg-sky-400",
-  "bg-emerald-400",
-  "bg-amber-400",
-  "bg-violet-400",
-  "bg-rose-400",
-];
+const palette = ["bg-sky-300", "bg-emerald-300", "bg-amber-300", "bg-violet-300", "bg-rose-300"];
 
-interface TabsProps {
-  current: SectionKey;
-  onChange: (section: SectionKey) => void;
-}
-
-export function Tabs({ current, onChange }: TabsProps) {
+export function Tabs({ current, onChange, orientation = "vertical" }: { current: SectionKey; onChange: (section: SectionKey) => void; orientation?: "horizontal" | "vertical" }) {
   const { lang } = useLanguage();
   const labels = copy[lang].ui.tabs;
   const listRef = useRef<HTMLDivElement>(null);
 
-  const focusTab = (index: number) => {
-    const tabs = listRef.current?.querySelectorAll<HTMLButtonElement>(
-      '[role="tab"]'
-    );
-    const tab = tabs?.[(index + sectionsOrder.length) % sectionsOrder.length];
-    tab?.focus();
+  const focusAndActivate = (index: number) => {
+    const safeIndex = (index + sectionsOrder.length) % sectionsOrder.length;
+    const tabs = listRef.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]');
+    tabs?.[safeIndex]?.focus();
+    onChange(sectionsOrder[safeIndex]);
   };
 
-  const onKeyDown = (e: React.KeyboardEvent, index: number) => {
-    switch (e.key) {
-      case "ArrowDown":
-      case "ArrowRight":
-        e.preventDefault();
-        focusTab(index + 1);
-        break;
-      case "ArrowUp":
-      case "ArrowLeft":
-        e.preventDefault();
-        focusTab(index - 1);
-        break;
-      case "Home":
-        e.preventDefault();
-        focusTab(0);
-        break;
-      case "End":
-        e.preventDefault();
-        focusTab(sectionsOrder.length - 1);
-        break;
-    }
+  const onKeyDown = (event: React.KeyboardEvent, index: number) => {
+    const forward = orientation === "horizontal" ? "ArrowRight" : "ArrowDown";
+    const backward = orientation === "horizontal" ? "ArrowLeft" : "ArrowUp";
+    if (event.key === forward) { event.preventDefault(); focusAndActivate(index + 1); }
+    if (event.key === backward) { event.preventDefault(); focusAndActivate(index - 1); }
+    if (event.key === "Home") { event.preventDefault(); focusAndActivate(0); }
+    if (event.key === "End") { event.preventDefault(); focusAndActivate(sectionsOrder.length - 1); }
   };
 
   return (
-    <div
-      ref={listRef}
-      role="tablist"
-      aria-orientation="vertical"
-      aria-label={lang === "es" ? "Secciones" : "Sections"}
-      className="flex h-full flex-col items-end justify-center gap-6"
-    >
+    <div ref={listRef} role="tablist" aria-orientation={orientation} aria-label={lang === "es" ? "Secciones del portafolio" : "Portfolio sections"} className={orientation === "horizontal" ? "flex gap-2 overflow-x-auto pb-1" : "flex h-full flex-col justify-center gap-4"}>
       {sectionsOrder.map((key, index) => {
-        const isActive = current === key;
-        const color = palette[index];
-
+        const active = current === key;
         return (
-          <button
-            key={key}
-            id={`tab-${key}`}
-            role="tab"
-            type="button"
-            aria-selected={isActive}
-            aria-controls="section-panel-left section-panel-right"
-            tabIndex={isActive ? 0 : -1}
-            onClick={() => onChange(key)}
-            onKeyDown={(e) => onKeyDown(e, index)}
-            className={[
-              "relative h-10 min-w-[110px] rounded-r-full pl-5 pr-4 text-[11px] font-semibold uppercase tracking-[0.16em]",
-              "shadow-sm transition-transform duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900",
-              isActive
-                ? `${color} text-slate-900 translate-x-0`
-                : "bg-slate-200 text-slate-700 hover:translate-x-3",
-            ].join(" ")}
-          >
-            <span className="inline-block align-middle">{labels[key]}</span>
-          </button>
+          <button key={key} id={`tab-${key}`} role="tab" type="button" aria-selected={active} aria-controls={`panel-${key}`} tabIndex={active ? 0 : -1} onClick={() => onChange(key)} onKeyDown={(event) => onKeyDown(event, index)} className={[
+            "min-h-11 shrink-0 whitespace-nowrap font-semibold uppercase tracking-[0.12em] shadow-sm transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950",
+            orientation === "horizontal" ? "rounded-full px-4 py-2 text-xs" : "min-w-[122px] rounded-r-full px-5 py-3 text-left text-[11px]",
+            active ? `${palette[index]} text-slate-950 ring-2 ring-slate-950/15` : "bg-white/80 text-slate-700 hover:bg-white",
+          ].join(" ")}>{labels[key]}</button>
         );
       })}
     </div>
   );
 }
+
