@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowUpRight, LockKeyhole } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { copy } from "@/utils/copy";
 import { Dialog } from "@/components/ui/Dialog";
@@ -8,231 +9,77 @@ import { Dialog } from "@/components/ui/Dialog";
 type Project = {
   id: string;
   title: string;
-  role: string;
-  short: string;
-  description: string;
+  category: string;
+  status: string;
+  summary: string;
+  contribution: string;
+  outcome: string;
   stack: readonly string[];
-  image: string;
-  link?: string;
+  private?: boolean;
+  packageUrl?: string;
   demoUrl?: string;
+  sourceUrl?: string;
 };
 
 export function Projects() {
   const { lang } = useLanguage();
-  const cProjects = copy[lang].sections.projects;
-  const uiProjects = copy[lang].ui;
-  const projects = cProjects.items;
-
-  const [activeProject, setActiveProject] = useState<Project | undefined>(
-    undefined
-  );
-  const [showDemo, setShowDemo] = useState(false);
-
-  const closeProject = () => {
-    setActiveProject(undefined);
-    setShowDemo(false);
-  };
+  const content = copy[lang].sections.projects;
+  const projects: readonly Project[] = content.items;
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <>
-      <div className="flex h-full flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-400">
-            {cProjects.eyebrowMain}
-          </p>
-
-          <h2 className="font-manrope text-2xl md:text-3xl font-semibold text-slate-900">
-            {cProjects.title}
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 overflow-y-auto pr-1 sm:grid-cols-2 lg:gap-6">
-          {projects.map((project) => (
-            <button
-              key={project.id}
-              type="button"
-              onClick={() => {
-                setActiveProject(project);
-                setShowDemo(false);
-              }}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/80 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent opacity-70" />
-              </div>
-
-              <div className="flex flex-1 flex-col gap-1 px-4 py-3">
-                <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  {project.role}
-                </p>
-
-                <h3 className="font-manrope text-sm font-semibold text-slate-900">
-                  {project.title}
-                </h3>
-
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {project.stack.slice(0, 3).map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-
-                  {project.stack.length > 3 && (
-                    <span className="rounded-full bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-500">
-                      +{project.stack.length - 3}
-                    </span>
-                  )}
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
+      <div className="grid gap-4 xl:grid-cols-2">
+        {projects.map((project) => (
+          <button key={project.id} type="button" onClick={() => setActiveProject(project)} className="group flex h-full min-h-44 flex-col rounded-2xl border border-slate-200 bg-white/70 p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950">
+            <div className="flex items-start justify-between gap-3">
+              <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{project.category}</p>
+              {project.private && <LockKeyhole aria-label={content.labels.private} className="h-4 w-4 shrink-0 text-slate-400" />}
+            </div>
+            <h3 className="mt-3 font-manrope text-base font-semibold leading-snug text-slate-950">{project.title}</h3>
+            <p className="mt-3 line-clamp-3 font-inter text-sm leading-relaxed text-slate-600">{project.outcome}</p>
+            <span className="mt-auto pt-4 text-xs font-semibold text-sky-700">{project.status} <ArrowUpRight className="inline h-3.5 w-3.5" /></span>
+          </button>
+        ))}
       </div>
 
-      <Dialog
-        open={!!activeProject && !showDemo}
-        onClose={closeProject}
-        labelledBy="project-dialog-title"
-        overlayClassName="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/50 px-4"
-        className="relative w-full max-w-3xl rounded-2xl bg-white shadow-2xl outline-none"
-      >
+      <Dialog open={!!activeProject} onClose={() => setActiveProject(null)} labelledBy="project-dialog-title" overlayClassName="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/65 px-4 py-6" className="relative max-h-[90svh] w-full max-w-3xl overflow-y-auto rounded-3xl bg-[#fffdf7] shadow-2xl outline-none">
         {activeProject && (
-          <>
-            <div className="flex items-start justify-between gap-4 border-b border-slate-100 px-6 py-4">
+          <div className="p-6 sm:p-8">
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                  {activeProject.role}
-                </p>
-
-                <h3
-                  id="project-dialog-title"
-                  className="mt-1 font-manrope text-lg  font-semibold text-slate-900"
-                >
-                  {activeProject.title}
-                </h3>
+                <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">{activeProject.status}</p>
+                <h3 id="project-dialog-title" className="mt-2 font-manrope text-2xl font-semibold text-slate-950">{activeProject.title}</h3>
               </div>
-
-              <div className="flex items-center gap-2">
-                {activeProject.demoUrl && (
-                  <button
-                    type="button"
-                    onClick={() => setShowDemo(true)}
-                    className="h-10 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 hover:bg-blue-300"
-                  >
-                    {uiProjects.demo}
-                  </button>
-                )}
-
-                <button
-                  type="button"
-                  onClick={closeProject}
-                  aria-label={uiProjects.close}
-                  className="h-10 rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-medium text-slate-500 hover:bg-red-200"
-                >
-                  {uiProjects.close}
-                </button>
-              </div>
+              <button type="button" onClick={() => setActiveProject(null)} className="min-h-11 rounded-full border border-slate-300 px-4 text-sm font-semibold hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950">{content.labels.close}</button>
             </div>
-
-            <div className="grid gap-4 px-6 pb-5 pt-4 md:grid-cols-[1.4fr_1fr] md:gap-6">
-              <div className="space-y-3">
-                <div className="overflow-hidden rounded-xl border border-slate-100 bg-slate-50">
-                  <img
-                    src={activeProject.image}
-                    alt={activeProject.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                <p className="font-inter text-sm md:text-base leading-relaxed text-slate-700">
-                  {activeProject.description}
-                </p>
-                <div>
-                  <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
-                    {uiProjects.stack}
-                  </p>
-
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {activeProject.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {activeProject.link && (
-                  <div>
-                    <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
-                      {cProjects.labelLink}
-                    </p>
-
-                    <a
-                      href={activeProject.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-2 inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-100"
-                    >
-                      {cProjects.labelViewProject}
-                    </a>
-                  </div>
-                )}
-              </div>
+            <p className="mt-6 font-inter text-base leading-relaxed text-slate-700">{activeProject.summary}</p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <Detail title={content.labels.contribution} text={activeProject.contribution} />
+              <Detail title={content.labels.outcome} text={activeProject.outcome} />
             </div>
-          </>
-        )}
-      </Dialog>
-
-      <Dialog
-        open={showDemo && !!activeProject?.demoUrl}
-        onClose={() => setShowDemo(false)}
-        labelledBy="demo-dialog-title"
-        overlayClassName="fixed inset-0 z-50 flex flex-col bg-slate-900/90"
-        className="flex flex-col h-full outline-none"
-      >
-        {activeProject?.demoUrl && (
-          <>
-            <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4">
-              <p
-                id="demo-dialog-title"
-                className="text-xs md:text-sm font-manrope font-medium text-slate-100"
-              >
-                {activeProject.title} · {uiProjects.interactiveDemo}
-              </p>
-              <button
-                type="button"
-                onClick={() => setShowDemo(false)}
-                className="rounded-full border border-slate-600 bg-slate-800/80 px-3 py-1 text-xs md:text-sm font-medium text-slate-100 hover:bg-slate-700"
-              >
-                {uiProjects.closeDemo}
-              </button>
+            <div className="mt-6">
+              <p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">{content.labels.stack}</p>
+              <div className="mt-3 flex flex-wrap gap-2">{activeProject.stack.map((item) => <span key={item} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">{item}</span>)}</div>
             </div>
-
-            <div className="flex-1">
-              <iframe
-                src={activeProject.demoUrl}
-                title={`${activeProject.title} ${uiProjects.interactiveDemo}`}
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                className="h-full w-full border-none"
-                allowFullScreen
-              />
+            <div className="mt-7 flex flex-wrap gap-3">
+              {activeProject.packageUrl && <ProjectLink href={activeProject.packageUrl} label={content.labels.viewPackage} />}
+              {activeProject.demoUrl && <ProjectLink href={activeProject.demoUrl} label={content.labels.liveDemo} />}
+              {activeProject.sourceUrl && <ProjectLink href={activeProject.sourceUrl} label={content.labels.source} />}
+              {activeProject.private && <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-slate-300 px-4 text-sm font-semibold text-slate-600"><LockKeyhole className="h-4 w-4" />{content.labels.private}</span>}
             </div>
-          </>
+          </div>
         )}
       </Dialog>
     </>
   );
 }
+
+function Detail({ title, text }: { title: string; text: string }) {
+  return <div className="rounded-2xl border border-slate-200 bg-white p-4"><p className="font-manrope text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">{title}</p><p className="mt-2 font-inter text-sm leading-relaxed text-slate-700">{text}</p></div>;
+}
+
+function ProjectLink({ href, label }: { href: string; label: string }) {
+  return <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-slate-950 px-4 text-sm font-semibold text-white hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950">{label}<ArrowUpRight className="h-4 w-4" /></a>;
+}
+
