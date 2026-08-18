@@ -1,62 +1,100 @@
-# 🚀 Portfolio Folder Interface
+# Heber Alvarez Portfolio
 
-This project is a personal portfolio built as a full-screen **folder-style interface** with smooth section transitions and bilingual content.  
-It serves as a UI/UX showcase and a technical demonstration of animations, state management, and modern frontend architecture.
+A bilingual portfolio for Frontend Engineer Heber Alvarez, designed as an interactive two-sheet folder.
 
----
+**Live site:** [heber-alvarez-portfolio.vercel.app](https://heber-alvarez-portfolio.vercel.app/)
 
-## 🧱 Tech Stack
+## Why a two-sheet folder?
 
-- **Next.js 14+ (App Router)**
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion** (page-flip animations)
-- **React Context** (language state)
-- **next/font** (Manrope for titles, Inter for body text)
-- **Vercel** (deployment)
+The interface treats every section as a small editorial spread. On desktop, content is presented across two facing pages with a visual spine. On mobile, the same pages become two stacked sheets with natural document scrolling, preserving the visual identity without sacrificing usability.
 
----
+## Features
 
-## 🔗 Live Demo
+- Two-page folder interface on desktop
+- Two-sheet vertical layout on mobile
+- English and Spanish content with persistent language preference
+- Accessible tab navigation and keyboard support
+- Reduced-motion support
+- Professional case studies with clear confidentiality labels
+- Downloadable CV and verified contact links
+- Open Graph, sitemap, robots and structured profile metadata
 
-You can view the deployed project here:  
-**https://your-project-url.vercel.app**
+## Selected work
 
----
+- Design System & AI-Ready Dashboards - private professional case study
+- Satellite Imagery & Voronoi Map - private professional case study
+- [`@isettingkit/business-rules`](https://www.npmjs.com/package/@isettingkit/business-rules) - public npm package
+- Interactive Portfolio Folder - this open-source project
 
-## ⭐ Main Features
+Private case studies intentionally exclude client names, screenshots, source code and unverifiable metrics.
 
-- Full-screen **folder/binder UI** (no scrolling)
-- Vertical **tab navigation** between sections
-- **Page-flip transition** using Framer Motion
-- **Language switch (EN/ES)** with React Context
-- Clean, minimal design with custom typography
-- Fast loading and smooth UI interactions
+## Tech stack
 
----
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide icons
+- Vercel
 
-## 📁 Project Structure
+## Getting started
 
-```txt
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Checks
+
+```bash
+pnpm lint
+pnpm build
+```
+
+## Project structure
+
+```text
 app/
   layout.tsx
   page.tsx
+  globals.css
+  opengraph-image.tsx
+  robots.ts
+  sitemap.ts
 components/
   Folder.tsx
   PageView.tsx
   Tabs.tsx
   LanguageSwitcher.tsx
+  sections/
 context/
   LanguageContext.tsx
 utils/
   copy/
-    es.ts
-    en.ts
-    index.ts
-styles/
-  globals.css
 public/
   assets/
-    icons/
-    images/
+  Heber_Alvarez.pdf
 ```
+
+## Accessibility
+
+- A skip link provides direct access to the portfolio content.
+- Tabs support keyboard navigation using arrow, Home and End keys.
+- Selected language and tabs expose their current state to assistive technology.
+- Animations respect `prefers-reduced-motion`.
+- Mobile content uses natural page scrolling and avoids fixed viewport heights.
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/heber-santiago-alvarez-rincon-799427230/)
+- [GitHub](https://github.com/heber59)
+- [npm](https://www.npmjs.com/package/@isettingkit/business-rules)
+- [Email](mailto:hesan0308@gmail.com)
+
+## License
+
+MIT
+
