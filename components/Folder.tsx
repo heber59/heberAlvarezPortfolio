@@ -75,7 +75,7 @@ export function Folder() {
             </section>
           )}
 
-          <div className="absolute inset-y-12 left-full ml-2 hidden lg:block">
+          <div className="absolute right-0 top-8 z-30 hidden translate-x-[calc(100%_-_0.5rem)] lg:block">
             <Tabs current={currentSection} onChange={navigate} orientation="vertical" />
           </div>
         </div>

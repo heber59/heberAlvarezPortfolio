@@ -24,6 +24,8 @@ The interface treats every section as a small editorial spread. On desktop, cont
 - Design System & AI-Ready Dashboards - private professional case study
 - Satellite Imagery & Voronoi Map - private professional case study
 - [`@isettingkit/business-rules`](https://www.npmjs.com/package/@isettingkit/business-rules) - public npm package
+- [AWS CDK Networking Lab](https://github.com/heber59/aws-cdk-networking-lab) - infrastructure as code and CI/CD
+- [Stock AI Prediction Backend](https://github.com/heber59/stockAiBackend) - FastAPI and XGBoost pipeline
 - Interactive Portfolio Folder - this open-source project
 
 Private case studies intentionally exclude client names, screenshots, source code and unverifiable metrics.
@@ -76,7 +78,8 @@ utils/
   copy/
 public/
   assets/
-  Heber_Alvarez.pdf
+app/cv/
+  route.ts
 ```
 
 ## Accessibility

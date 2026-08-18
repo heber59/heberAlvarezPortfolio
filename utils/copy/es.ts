@@ -100,6 +100,34 @@ export const esCopy = {
           demoUrl: "https://sistemasaas.vercel.app/",
         },
         {
+          id: "aws-cdk-networking-lab",
+          title: "Laboratorio de redes con AWS CDK",
+          category: "Código abierto · Infraestructura cloud",
+          status: "Repositorio público",
+          summary:
+            "Un laboratorio de infraestructura AWS inspirado en producción, construido con CDK, entornos separados, aislamiento de red y flujos automatizados de entrega.",
+          contribution:
+            "Modelé una VPC multi-AZ, capas públicas y privadas, subredes aisladas para bases de datos, balanceo de carga, grupos de seguridad y workflows de GitHub Actions para validación y promoción.",
+          outcome:
+            "Una referencia documentada de infraestructura como código que demuestra fundamentos de redes AWS, IAM/OIDC, promoción de entornos y CI/CD.",
+          stack: ["AWS CDK", "TypeScript", "VPC", "EC2", "Aurora", "GitHub Actions"],
+          sourceUrl: "https://github.com/heber59/aws-cdk-networking-lab",
+        },
+        {
+          id: "stock-ai-backend",
+          title: "Backend de predicción bursátil con IA",
+          category: "Código abierto · Backend de machine learning",
+          status: "Repositorio público",
+          summary:
+            "Un backend con FastAPI y XGBoost que transforma información histórica del mercado en predicciones probabilísticas mediante un pipeline cuantitativo reproducible.",
+          contribution:
+            "Implementé ingesta y estandarización de datos, creación de indicadores técnicos, auditorías de calidad, entrenamiento para series temporales, persistencia de modelos e inferencia de señales recientes.",
+          outcome:
+            "Un pipeline modular que separa datos, características, entrenamiento e inferencia y reduce el sesgo de anticipación mediante validación temporal.",
+          stack: ["Python", "FastAPI", "XGBoost", "pandas", "scikit-learn", "Parquet"],
+          sourceUrl: "https://github.com/heber59/stockAiBackend",
+        },
+        {
           id: "portfolio",
           title: "Portafolio interactivo tipo carpeta",
           category: "Código abierto · Proyecto personal",
